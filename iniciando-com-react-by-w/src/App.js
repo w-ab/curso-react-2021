@@ -1,12 +1,31 @@
 import React from "react";
 
-function ComponenteFuncional(){
+function App(props){
+  const modificarNome = () => {
+    console.log(props.nome)
+  }
+
+  const criaComboBox = () => {
+    const opcoes = [ "Fresco", "Curado" ]
+    const comboBoxOpcoes = opcoes.map( opcao => <option>{opcao}</option> )
+    
+    return (
+      <select>
+        {comboBoxOpcoes}
+      </select>
+    )
+  }
+  const MeuComboBox = () => criaComboBox()
   return (
-    <h1>Hello</h1>
+    <>
+      <input type="text" className="centralizado" value={props.nome} onChange={modificarNome}/>
+      <h1>Olá {props.nome}, você tem {props.idade} anos!</h1>
+      <MeuComboBox />
+    </>
   )
 }
 
-class App extends React.Component {
+class App2 extends React.Component {
   state = {
     nome : ''
   }
