@@ -44,8 +44,16 @@ class App extends React.Component {
       </select>
     )
   }
+  componentDidMount(){
+    console.log('Executou componentDidMount')
+  }
+
+  componentDidUpdate(){
+    console.log('Executou componentDidUpdate')
+  }
 
   render(){
+    console.log('Executou render')
     const MeuTitulo = () => this.tituloBacana()
     
     return (
